@@ -163,6 +163,7 @@ class HomePage extends Page {
         const gap = value - parseInt(currentValue);
         for (let i = 0; i < gap; i++) {
           const increaseBtn = await this.increasePsgBtn(key as any);
+          await increaseBtn.waitForClickable();
           await increaseBtn.click();
         }
         currentValue = await inputEle.getValue();
